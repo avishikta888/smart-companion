@@ -16,6 +16,33 @@ This project addresses **Problem Statement 1 – The Smart Companion**, designed
 
 ## How to Run (Docker)
 
-```bash
 docker build -t smart-companion .
 docker run -p 8000:8000 smart-companion
+
+## API Usage
+
+POST /break-task
+
+{
+  "task": "Study physics"
+}
+
+Response:
+
+{
+  "original_task": "Study physics",
+  "micro_steps": [
+    "Take a deep breath and prepare to start",
+    "Clear your workspace",
+    "Start the first tiny part",
+    "Take a short break"
+  ]
+}
+
+## Privacy
+
+All user data is stored locally in SQLite. No personal data is sent to external services.
+
+## Impact
+
+This tool promotes autonomy by converting task paralysis into immediate action through micro-wins.
